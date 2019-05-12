@@ -31,5 +31,14 @@ namespace JsonValidateNr01.Test
             bool actual = Program.ValidateJsonNr(input);
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void For_Number_With_Comma_And_Multiplycation_By_10_3_times_It_Should_Return_True()
+        {
+            string input = "12.123e3";
+            bool expected = true;
+            bool actual = Program.ValidateJsonNr(input);
+            Assert.Equal(expected, actual);
+        }
     }
 }
