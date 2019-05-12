@@ -22,5 +22,14 @@ namespace JsonValidateNr01.Test
             bool actual = Program.ValidateJsonNr(input);
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void For_Number_With_Comma_It_Should_Return_True()
+        {
+            string input = "12.34";
+            bool expected = true;
+            bool actual = Program.ValidateJsonNr(input);
+            Assert.Equal(expected, actual);
+        }
     }
 }

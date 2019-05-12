@@ -24,6 +24,12 @@ namespace JsonValidateNr01
                             continue;
                         }
                         return false;
+                    case '.':
+                        if (i == 0 || input[i + 1] - 48 >= 0 && input[i + 1] - 48 <= 9)
+                        {
+                            continue;
+                        }
+                        return false;
                     default:
                         if (input[i] - 48 >= 1 && input[i] - 48 <= 9)
                         {
