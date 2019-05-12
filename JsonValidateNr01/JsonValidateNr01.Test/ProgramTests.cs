@@ -58,5 +58,23 @@ namespace JsonValidateNr01.Test
             bool actual = Program.ValidateJsonNr(input);
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void For_A_Number_That_Starts_With_0_It_Should_Return_False()
+        {
+            string input = "0123";
+            bool expected = false;
+            bool actual = Program.ValidateJsonNr(input);
+            Assert.Equal(expected, actual);
+        }
+        
+        [Fact]
+        public void For_Number_With_Incomplete_Exponential_Notation_It_Should_Return_False()
+        {
+            string input = "12.123E";
+            bool expected = false;
+            bool actual = Program.ValidateJsonNr(input);
+            Assert.Equal(expected, actual);
+        }
     }
 }

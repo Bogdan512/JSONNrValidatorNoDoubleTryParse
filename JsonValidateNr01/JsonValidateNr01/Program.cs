@@ -38,6 +38,10 @@ namespace JsonValidateNr01
                         return false;
                     case 'e':
                         {
+                            if (i == input.Length - 1)
+                            {
+                                return false;
+                            }
                             if ((input[i - 1] - 48 >= 0 && input[i - 1] - 48 <= 9) && input[i + 1] - 48 >= 0 && input[i + 1] - 48 <= 9
                                 || input[i + 1] =='+' && (input[i + 2] - 48 >= 0 && input[i + 2] - 48 <= 9)
                                 || input[i + 1] == '-' && (input[i + 2] - 48 >= 0 && input[i + 2] - 48 <= 9))
@@ -48,6 +52,10 @@ namespace JsonValidateNr01
                         }
                     case 'E':
                         {
+                            if (i == input.Length - 1)
+                            {
+                                return false;
+                            }
                             if ((input[i - 1] - 48 >= 0 && input[i - 1] - 48 <= 9) && input[i + 1] - 48 >= 0 && input[i + 1] - 48 <= 9
                                 || input[i + 1] == '+' && (input[i + 2] - 48 >= 0 && input[i + 2] - 48 <= 9)
                                 || input[i + 1] == '-' && (input[i + 2] - 48 >= 0 && input[i + 2] - 48 <= 9))
