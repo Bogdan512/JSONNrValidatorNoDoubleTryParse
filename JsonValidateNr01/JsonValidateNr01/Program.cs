@@ -31,7 +31,11 @@ namespace JsonValidateNr01
                         }
                         return false;
                     case '.':
-                        if (input[i - 1] - 48 >= 0 && input[i - 1] - 48 <= 9 || input[i + 1] - 48 >= 0 && input[i + 1] - 48 <= 9)
+                        if (i == 0 || i == input.Length - 1)
+                        {
+                            return false;
+                        }
+                        if (input[i - 1] - 48 >= 0 && input[i - 1] - 48 <= 9 && input[i + 1] - 48 >= 0 && input[i + 1] - 48 <= 9)
                         {
                             continue;
                         }
