@@ -49,5 +49,14 @@ namespace JsonValidateNr01.Test
             bool actual = Program.ValidateJsonNr(input);
             Assert.Equal(expected, actual);
         }
+        
+        [Fact]
+        public void For_Number_With_Scientific_Notation_With_Minus_It_Should_Return_True()
+        {
+            string input = "12.123E-2";
+            bool expected = true;
+            bool actual = Program.ValidateJsonNr(input);
+            Assert.Equal(expected, actual);
+        }
     }
 }
