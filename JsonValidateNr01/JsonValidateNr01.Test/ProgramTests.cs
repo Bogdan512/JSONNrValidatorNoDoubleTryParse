@@ -13,5 +13,14 @@ namespace JsonValidateNr01.Test
             bool actual = Program.ValidateJsonNr(input);
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void For_Minus_123_It_Should_Return_True()
+        {
+            string input = "-123";
+            bool expected = true;
+            bool actual = Program.ValidateJsonNr(input);
+            Assert.Equal(expected, actual);
+        }
     }
 }
