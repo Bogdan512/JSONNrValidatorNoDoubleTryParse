@@ -5,10 +5,14 @@ namespace JsonValidateNr01.Test
 {
     public class ProgramTests
     {
+
         [Fact]
-        public void RedTestForNotImplementedMethod()
+        public void FirstGreenTestMinimumImplementation()
         {
-            Program.ValidateJsonNr("Test");
+            string input = "Test";
+            bool expected = true;
+            bool actual = Program.ValidateJsonNr(input);
+            Assert.Equal(expected, actual);
         }
     }
 }
