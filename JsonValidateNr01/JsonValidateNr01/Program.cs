@@ -24,6 +24,12 @@ namespace JsonValidateNr01
                             continue;
                         }
                         return false;
+                    case '+':
+                        if (input[i] == 'e' || input[i - 1] == 'E' && input[i + 1] - 48 >= 1 && input[i + 1] - 48 <= 9)
+                        {
+                            continue;
+                        }
+                        return false;
                     case '.':
                         if (input[i - 1] - 48 >= 0 && input[i - 1] - 48 <= 9 || input[i + 1] - 48 >= 0 && input[i + 1] - 48 <= 9)
                         {
@@ -33,8 +39,18 @@ namespace JsonValidateNr01
                     case 'e':
                         {
                             if ((input[i - 1] - 48 >= 0 && input[i - 1] - 48 <= 9) && input[i + 1] - 48 >= 0 && input[i + 1] - 48 <= 9
-                                || input[i + 1] =='+' && (input[i + 1] - 48 >= 0 && input[i + 1] - 48 <= 9)
-                                || input[i + 1] == '-' && (input[i + 1] - 48 >= 0 && input[i + 1] - 48 <= 9))
+                                || input[i + 1] =='+' && (input[i + 2] - 48 >= 0 && input[i + 2] - 48 <= 9)
+                                || input[i + 1] == '-' && (input[i + 2] - 48 >= 0 && input[i + 2] - 48 <= 9))
+                            {
+                                continue;
+                            }
+                            return false;
+                        }
+                    case 'E':
+                        {
+                            if ((input[i - 1] - 48 >= 0 && input[i - 1] - 48 <= 9) && input[i + 1] - 48 >= 0 && input[i + 1] - 48 <= 9
+                                || input[i + 1] == '+' && (input[i + 2] - 48 >= 0 && input[i + 2] - 48 <= 9)
+                                || input[i + 1] == '-' && (input[i + 2] - 48 >= 0 && input[i + 2] - 48 <= 9))
                             {
                                 continue;
                             }
